@@ -1,10 +1,12 @@
 # NGINX instruction:
 
 > Установка на Centos:
-yum install epel-release
-yum install nginx
-service nginx status
-service nginx start
+```bash
+yum install epel-release # Скачивание репозитория для модулей nginx
+yum install nginx        # Скачивание и установка nginx
+service nginx status     # Проверяем статус сервиса
+service nginx start      # Стратуем сервис
+```
 
 > Установка из исходного кода:
 ```bash
@@ -12,22 +14,21 @@ sudo apt-get upgrade
 wget https://nginx.org/download/nginx-1.23.2.tar.gz
 tar -zxvf nginx-1.23.2.tar.gz
 sudo apt-get install libpcre3 libpcre3-dev libpcrecpp0 libssl-dev zlib1g-dev
-... # далее нужно будет установить зависимости вручную
+# далее нужно будет установить зависимости вручную
 ```
 
-> Ubuntu:
+> Установка на Ubuntu:
 ```bash
-sudo apt-get install nginx  # установка
-systemctl status nginx  # проверить статус
-ls -l /etc/nginx/  # конфиги nginx
-ip -c a  # смотрим свой айпишник и вбиваем его на локалхосте в браузере
+sudo apt-get install nginx  # Скачивание и установка nginx
+systemctl status nginx      # Проверяем статус сервиса
+ls -l /etc/nginx/           # Конфиги nginx
+ip -c a                     # Смотрим свой айпишник и вбиваем его на локалхосте в браузере
 ```
 
 > Command:
 ```bash
-nginx -t  # проверка nginx
-cat /etc/nginx/nginx.conf  # конфиги
-sudo nano nginx.conf
+nginx -t                    # Проверка работоспособности nginx
+nano /etc/nginx/nginx.conf  # Основной конфигурационный файл nginx 
 ```
 > Nginx configure
 ```bash
@@ -74,13 +75,13 @@ http {
 ```
 
 ```bash
-systemctl reload nginx   # перезагрузить каонфиги nginx
-systemctl status nginx   # посмотреть статус сервиса
-systemctl restart nginx  # рестартануть сервис
-systemctl start nginx    # стартануть сервис
-
-sudo apt-get install php-fpm    # устанавливаем php-fpm
-sudo apt-get install php-mysql  # устанавливаем php-mysql
-sudo apt-get install php        # устанавливаем php
-sudo apt-get install php-cgi    # устанавливаем php-cgi
+systemctl reload nginx          # Перезагрузить конфиги nginx
+systemctl status nginx          # Посмотреть статус сервиса
+systemctl restart nginx         # Рестартануть сервис
+systemctl start nginx           # Стартануть сервис
+--------------------------------------------------------------
+sudo apt-get install php-fpm    # Устанавливаем php-fpm
+sudo apt-get install php-mysql  # Устанавливаем php-mysql
+sudo apt-get install php        # Устанавливаем php
+sudo apt-get install php-cgi    # Устанавливаем php-cgi
 ```
